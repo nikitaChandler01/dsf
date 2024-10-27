@@ -1,4 +1,4 @@
-import { AuthorizedRouter } from "Router/AuthorizedRouter";
+import { AuthorizedRouter } from "../AuthorizedRouter";
 
 const Router = () => {
   return <AuthorizedRouter />;

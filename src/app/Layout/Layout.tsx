@@ -5,7 +5,12 @@ interface ILayout {
 }
 
 const Layout = ({ children }: ILayout) => {
-  return <div className="layout-root">{children}</div>;
+  return (
+    <div className="layout-root">
+      {children}
+      123213
+    </div>
+  );
 };
 
 export default Layout;

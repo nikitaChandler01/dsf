@@ -1,14 +1,13 @@
-import "./Layout.scss";
-
+import Header from "./Header/Header";
 interface ILayout {
   children: React.ReactNode;
 }
 
 const Layout = ({ children }: ILayout) => {
   return (
-    <div className="layout-root">
+    <div className="layout">
+      <Header />
       {children}
-      123213
     </div>
   );
 };

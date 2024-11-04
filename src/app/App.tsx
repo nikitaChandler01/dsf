@@ -1,13 +1,12 @@
-import "./App.css";
+import { BrowserRouter } from "react-router-dom";
 import { Layout } from "./Layout";
-import { Router } from "./Router/Router";
 
-function App() {
+const App = () => {
   return (
-    <Layout>
-      <Router />
-    </Layout>
+    <BrowserRouter>
+      <Layout>123</Layout>
+    </BrowserRouter>
   );
-}
+};
 
 export default App;

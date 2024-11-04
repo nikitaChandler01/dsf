@@ -10,14 +10,15 @@ import {
   NavbarMenuItem,
   NavbarMenuToggle,
 } from "@nextui-org/react";
-import { Link } from "react-router-dom";
-import "./Header.scss";
 import { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { headerNavbarClassNames } from "./constants";
+import "./Header.scss";
 
 const Header = () => {
   const menuItems = ["Гараж", "Обслужить", "Настройки"];
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { pathname } = useLocation();
   return (
     <header className="layout__header">
       <Navbar
@@ -36,14 +37,14 @@ const Header = () => {
           <Logotype width={64} height={64} />
         </NavbarBrand>
         <NavbarContent justify="center">
-          <NavbarItem isActive>
-            <Link to="/">Гараж</Link>
+          <NavbarItem isActive={pathname === "/garage"}>
+            <Link to="/garage">Гараж</Link>
           </NavbarItem>
-          <NavbarItem>
-            <Link to="/">Обслужить</Link>
+          <NavbarItem isActive={pathname === "/maintenance"}>
+            <Link to="/maintenance">Обслужить</Link>
           </NavbarItem>
-          <NavbarItem>
-            <Link to="/">Настройки</Link>
+          <NavbarItem isActive={pathname === "/settings"}>
+            <Link to="/settings">Настройки</Link>
           </NavbarItem>
         </NavbarContent>
         <NavbarContent justify="end">
